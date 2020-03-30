@@ -61,7 +61,8 @@ def main(argv=None):
     multiline_prog = re.compile(r'(/\*.*?\*/|//.*?$)', (re.MULTILINE|re.DOTALL))
 
     source_files = (
-        fpath for fpath in find_files(parent_dir) if fpath.endswith('.scala')
+        fpath for fpath in find_files(parent_dir)
+        if fpath.endswith('.scala') or fpath.endswith('.java')
     )
 
     stats = []
