@@ -43,8 +43,8 @@ def analyze(source, re_prog):
 
 def analyze_file(file_path, re_prog):
     """Return source code statistics for a source code file."""
-    with open(file_path) as f:
-        return analyze(f.read(), re_prog)
+    with open(file_path, 'rb') as f:
+        return analyze(f.read().decode('utf8', 'ignore'), re_prog)
 
 
 def find_files(parent_dir):
